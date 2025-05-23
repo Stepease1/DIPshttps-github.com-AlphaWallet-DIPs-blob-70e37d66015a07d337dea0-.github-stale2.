@@ -1,0 +1,22 @@
+{
+  "DIP": "TBD",
+  "Title": "Enable Secure Call/Return on Any Ethereum or EVM-Compatible Smart Contract via In-App Browser",
+  "Status": "Draft",
+  "Theme": "Core, Interface, Smart Contract Interaction",
+  "Tags": "browser, EVM, smart contract, call, return, AlphaWallet, cross-chain, dApp",
+  "Authors": "Stepease1 (@Stepease1)",
+  "Discussions-to": "https://github.com/Freedomlink1/DIPshttps-github.com-AlphaWallet-DIPs-blob-70e37d66015a07d337dea0-.github-stale./discussions",
+  "Created": "2025-05-23",
+  "Requires": "",
+  "Replaces": "",
+  "Summary": "This proposal aims to update the AlphaWallet app’s browser to support up-to-date, secure, and flexible call/return execution on any Ethereum or EVM-compatible smart contract directly from the in-app browser.",
+  "Abstract": "AlphaWallet’s in-app browser should allow users to execute arbitrary call and return operations on any Ethereum or EVM-compatible smart contract, supporting both reading data and triggering contract functions. This brings dApp browser capabilities up to date with the latest standards and ensures compatibility with evolving smart contract platforms.",
+  "Motivation": "dApps and users increasingly require the ability to interact flexibly with smart contracts across multiple EVM-compatible chains. Updating the in-app browser with these capabilities ensures AlphaWallet remains competitive and useful for the community.",
+  "Specification": "1. Integrate a modern Web3 provider (such as ethers.js or web3.js) within the in-app browser.\n2. Allow the browser to inject the provider and facilitate call/return operations for any user-supplied or dApp-initiated contract address and ABI.\n3. Ensure compatibility with Ethereum Mainnet, testnets, and other EVM-compatible chains (Polygon, BSC, etc.).\n4. Implement security checks for contract calls, including user confirmation dialogs and transaction previews.\n5. Ensure that all returned data is decoded and presented to users/dApps in a standard format.",
+  "Rationale": "Modern dApps expect wallets to provide seamless interaction with any smart contract, not just pre-approved ones. This approach keeps AlphaWallet relevant and aligned with current dApp expectations.",
+  "Backwards Compatibility": "No breaking changes are anticipated for existing browser functionality. This is an additive feature. Existing users should be able to interact with new contracts without affecting legacy interactions.",
+  "Security Considerations": "Care must be taken to prevent phishing and malicious contracts from abusing the call/return feature. All contract operations should require explicit user approval. Rate limiting, transaction previews, and robust contract data parsing are recommended.",
+  "Test Cases": "1. User visits a dApp and initiates a contract call (read/write) via the browser; the operation should be executed and the result shown.\n2. User attempts to call a contract on Polygon; the provider should switch networks and execute the call as expected.\n3. Malicious contract tries to initiate a transaction; the user must be prompted with a full preview and must approve before execution.",
+  "Reference Implementation": "Reference: MetaMask's in-browser provider (ethers.js/web3.js) and AlphaWallet's current in-app browser implementation.",
+  "Copyright": "This work is dual-licensed under the MIT and Apache 2.0 licenses."
+}
